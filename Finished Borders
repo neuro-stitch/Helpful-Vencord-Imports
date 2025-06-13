@@ -1,5 +1,5 @@
 [class*='base_'] > [class*='content_'] {
-    margin: 0 10px 10px 0;
+    margin: 10px 10px 10px 0;
 
     [class*='page_'] {
         border: 1px solid var(--app-border-frame);
