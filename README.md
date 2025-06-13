@@ -1,0 +1,1 @@
+If I ever intend to make this public and advertise it, I will add all credits. If you find this repository, it was on accident and while you are free to use these imports, please don't credit me for making these, thank you. I only fix a few issues I personally had with these.
