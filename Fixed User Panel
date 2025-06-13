@@ -1,0 +1,16 @@
+/* Fix User Panel */
+.visual-refresh section.panels_c48ade {
+  left: calc(var(--custom-guild-list-width) + var(--space-xs));
+  width: calc(100% - var(--custom-guild-list-width) - var(--space-xs)*2);
+  box-sizing: border-box;
+
+  .actionButtons_e131a9 button {
+    padding: 0;
+  }
+}
+nav.guilds_c48ade {
+  margin-bottom: 0 !important;
+}
+.sidebar_c48ade:after {
+  display: none;
+}
