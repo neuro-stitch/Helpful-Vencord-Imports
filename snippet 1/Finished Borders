@@ -1,0 +1,74 @@
+/* Finished Borders */
+[class*='base_'] > [class*='content_'] {
+    margin: 0 10px 10px 0;
+
+    [class*='page_'] {
+        border: 1px solid var(--app-border-frame);
+        border-left: none;
+        border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    }
+
+    [class*='sidebar_'] {
+        &::after {
+            display: none;
+        }
+
+        [class*='sidebarList_'] {
+            border-bottom: 1px solid var(--app-border-frame);
+            border-bottom-left-radius: var(--radius-md);
+        }
+    }
+
+    [class*='chat_'], [class*='callContainer_cb9592'] {
+        border: none !important;
+    }
+}
+
+/* ↓↓↓ Adjusted z-index here ↓↓↓ */
+.standardSidebarView__23e6b {
+    width: calc(100vw - var(--custom-guild-list-width) - 10px);
+    top: calc(var(--custom-app-top-bar-height) * 1.5 + 2px)!important;
+    left: var(--custom-guild-list-width);
+    height: calc(100vh - calc(var(--custom-app-top-bar-height) * 1) - 11px);
+    overflow: visible !important; /* allow context menus to overflow */
+    border-radius: var(--radius-md);
+    z-index: 1; /* keep this low so menus can appear above it */
+}
+
+/* ↓↓↓ same here ↓↓↓ */
+.layerContainer_da8173, .backdrop__78332 {
+    width: calc(100vw - var(--custom-guild-list-width) - 10px);
+    top: var(--custom-app-top-bar-height)!important;
+    left: var(--custom-guild-list-width);
+    height: calc(100vh - var(--custom-app-top-bar-height) - 11px);
+    overflow: visible !important;
+    border-radius: var(--radius-md);
+    z-index: 1;
+}
+
+.submenuPaddingContainer_c1e9c4 {
+    margin-left: 80px;
+}
+.layer__960e4 {
+    background: rgba(0,0,0,0.5);
+}
+
+.baseLayer__960e4 {
+    opacity: 1!important;
+    transform: scale(1)!important;
+    z-index: 0;
+}
+
+/* ↓↓↓ This was the issue: too high ↓↓↓ */
+.panels_c48ade {
+    z-index: 10!important; /* was 10000 — lowered to let menus appear above it */
+}
+
+/* ↑↑ If needed, you can even REMOVE the z-index line above entirely ↑↑ */
+
+/* Add this at the bottom to ensure context menus show up */
+[class*='contextMenu_'], [class*='menu_'] {
+    z-index: 9999 !important;
+    position: fixed !important;
+    overflow: visible !important;
+}
